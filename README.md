@@ -1,3 +1,16 @@
+# Pertemuan 2
+## Halaman About
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/4bea1145-cabe-4b2c-98de-c34a80d522fb" />
+
+## Halaman Register
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/df34516c-f59d-4775-b806-51f6cf908f01" />
+
+## Halaman Login
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/168e9596-b4c0-48bb-b280-f12f9ac87be8" />
+
+
+
+# Pertemuan 1
 <img width="1915" height="1027" alt="{44D04E17-DFD6-4EFA-AC7B-5CDDA84093D6}" src="https://github.com/user-attachments/assets/1f0a045a-d37e-4d9e-9e96-a988018c41a2" />
 
 

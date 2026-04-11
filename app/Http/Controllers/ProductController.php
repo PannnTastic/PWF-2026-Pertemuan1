@@ -42,6 +42,7 @@ class ProductController extends Controller
 
     public function update(UpdateProductRequest $request, Product $product)
     {
+        \Illuminate\Support\Facades\Gate::authorize('update', $product);
         $product->update($request->validated());
 
         return redirect()->route('product.index')->with('success', 'Product updated successfully.');
@@ -49,6 +50,7 @@ class ProductController extends Controller
 
     public function destroy(Product $product)
     {
+        \Illuminate\Support\Facades\Gate::authorize('delete', $product);
         $product->delete();
 
         return redirect()->route('product.index')->with('success', 'Product deleted successfully.');

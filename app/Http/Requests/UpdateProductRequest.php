@@ -27,4 +27,24 @@ class UpdateProductRequest extends FormRequest
             'price' => 'required|integer|min:0',
         ];
     }
+
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'Nama produk wajib diisi.',
+            'name.string' => 'Nama produk harus berupa teks.',
+            'name.max' => 'Nama produk maksimal 255 karakter.',
+            'qty.required' => 'Kuantitas wajib diisi.',
+            'qty.integer' => 'Kuantitas harus berupa angka bulat.',
+            'qty.min' => 'Kuantitas tidak boleh kurang dari 0.',
+            'price.required' => 'Harga wajib diisi.',
+            'price.integer' => 'Harga harus berupa angka bulat.',
+            'price.min' => 'Harga tidak boleh kurang dari 0.',
+        ];
+    }
 }

@@ -25,7 +25,11 @@
                         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Owner</label>
                         <p class="mt-1 text-lg">{{ $product->user->name ?? 'Unknown' }}</p>
                     </div>
-                    <a href="{{ route('product.index') }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 font-semibold">Back to List</a>
+                    <div class="flex items-center gap-3 mt-6">
+                        <a href="{{ route('product.index') }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 font-semibold">Back to List</a>
+                        <x-edit-button :url="route('product.edit', $product)" name="Product" />
+                        <x-delete-button :url="route('product.destroy', $product)" name="Product" />
+                    </div>
                 </div>
             </div>
         </div>

@@ -27,8 +27,10 @@
                     </div>
                     <div class="flex items-center gap-3 mt-6">
                         <a href="{{ route('product.index') }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 font-semibold">Back to List</a>
+                        @can('manage-product')
                         <x-edit-button :url="route('product.edit', $product)" name="Product" />
                         <x-delete-button :url="route('product.destroy', $product)" name="Product" />
+                        @endcan
                     </div>
                 </div>
             </div>

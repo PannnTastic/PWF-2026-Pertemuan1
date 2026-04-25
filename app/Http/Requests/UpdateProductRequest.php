@@ -23,6 +23,7 @@ class UpdateProductRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
+            'category_id' => 'nullable|exists:category,id',
             'qty' => 'required|integer|min:0',
             'price' => 'required|integer|min:0',
         ];
@@ -39,6 +40,7 @@ class UpdateProductRequest extends FormRequest
             'name.required' => 'Nama produk wajib diisi.',
             'name.string' => 'Nama produk harus berupa teks.',
             'name.max' => 'Nama produk maksimal 255 karakter.',
+            'category_id.exists' => 'Kategori yang dipilih tidak valid.',
             'qty.required' => 'Kuantitas wajib diisi.',
             'qty.integer' => 'Kuantitas harus berupa angka bulat.',
             'qty.min' => 'Kuantitas tidak boleh kurang dari 0.',

@@ -19,6 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('product', \App\Http\Controllers\ProductController::class);
+    Route::resource('category', \App\Http\Controllers\CategoryController::class)->except(['show']);
 });
 
 require __DIR__.'/auth.php';

@@ -21,10 +21,15 @@
                         {{ __('About') }}
                     </x-nav-link>
                 </div>
-                @can('manage-product')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('product.index')" :active="request()->routeIs('product.*')">
                         {{ __('Product') }}
+                    </x-nav-link>
+                </div>
+                @can('manage-category')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('category.index')" :active="request()->routeIs('category.*')">
+                        {{ __('Category') }}
                     </x-nav-link>
                 </div>
                 @endcan

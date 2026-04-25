@@ -3,26 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with('user')->get();
+        $products = Product::with('user', 'category')->get();
         return view('product.index', compact('products'));
     }
 
     public function create()
     {
-        return view('product.create');
+        Gate::authorize('manage-product');
+        $categories = Category::all();
+        return view('product.create', compact('categories'));
     }
 
     public function store(StoreProductRequest $request)
     {
+        Gate::authorize('manage-product');
         $data = $request->validated();
         $data['user_id'] = Auth::id();
         Product::create($data);
@@ -37,7 +42,9 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('product.edit', compact('product'));
+        Gate::authorize('manage-product');
+        $categories = Category::all();
+        return view('product.edit', compact('product', 'categories'));
     }
 
     public function update(UpdateProductRequest $request, Product $product)
